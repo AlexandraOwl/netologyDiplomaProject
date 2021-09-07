@@ -15,6 +15,10 @@ repositories {
     mavenCentral()
 }
 
+configurations {
+    testCompile
+}
+
 allure {
     autoconfigure = true
     version = '2.14.0'
