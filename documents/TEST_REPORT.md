@@ -31,9 +31,9 @@
 </details>
 
 ### Общие рекомендации
-1. Исправить ошибку на главной странице и название вкладки (Bugs: );
-2. Исправить баги, связанные с неверными сообщениями об ошибках;
-3. Для поля "Владелец" ввести ограничение на вводимые символы - только латинские буквы (желательно добавить ввод сразу верхним регистром независимо от нажатой клавиши Shift/Caps Lock);
+1. Исправить ошибку на главной странице и название вкладки (https://github.com/AlexandraOwl/netologyDiplomaProject/issues/4, https://github.com/AlexandraOwl/netologyDiplomaProject/issues/3);
+2. Исправить баги, связанные с неверными сообщениями об ошибках (https://github.com/AlexandraOwl/netologyDiplomaProject/issues/7);
+3. Для поля "Владелец" ввести ограничение на вводимые символы - только латинские буквы (желательно добавить ввод сразу верхним регистром независимо от нажатой клавиши Shift/Caps Lock) (https://github.com/AlexandraOwl/netologyDiplomaProject/issues/1);
 4. Сделать кнопку "Продолжить" неактивной, если есть пустые и/или неправильно заполненные поля.
 
 **Полный список багов: https://github.com/AlexandraOwl/netologyDiplomaProject/issues**
