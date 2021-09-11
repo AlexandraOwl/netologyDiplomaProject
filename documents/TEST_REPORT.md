@@ -27,6 +27,12 @@
 > * Failed: 58.34% (14 шт.)
 <details>
    <summary>Report</summary>
+   
+![report 1](https://user-images.githubusercontent.com/81297207/132939676-12a2339d-c4a4-4580-907f-0230b547311e.png)
+   
+![report 2](https://user-images.githubusercontent.com/81297207/132939680-d800dfb5-4e38-4997-b629-5b9a374d0043.png)
+   
+![report 3](https://user-images.githubusercontent.com/81297207/132939682-87b6c6f1-0f18-47c0-a00c-00857e5e0c6c.png)
 
 </details>
 
