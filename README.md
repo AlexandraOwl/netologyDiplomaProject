@@ -1,4 +1,5 @@
-# Дипломный проект по атоматическому тестированию Netology.
+# Дипломный проект по атоматическому тестированию Netology. 
+![Build Status](https://github.com/AlexandraOwl/netologyDiplomaProject/actions/workflows/gradle.yml/badge.svg)
 
 ## Для запуска проекта:
 1. Склонироват репозиторий проекта;
