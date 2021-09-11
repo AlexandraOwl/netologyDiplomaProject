@@ -1,9 +1,9 @@
 # Дипломный проект по атоматическому тестированию Netology. 
 ![Build Status](https://github.com/AlexandraOwl/netologyDiplomaProject/actions/workflows/gradle.yml/badge.svg)
 
-[Дипломное задание](https://github.com/netology-code/qa-diploma)
-[Тестовый план](https://github.com/AlexandraOwl/netologyDiplomaProject/blob/main/documents/TEST_PLAN.md)
-[Отчет по автоматизированным тестам](https://github.com/AlexandraOwl/netologyDiplomaProject/blob/main/documents/TEST_REPORT.md)
+- [Дипломное задание](https://github.com/netology-code/qa-diploma)
+- [Тестовый план](https://github.com/AlexandraOwl/netologyDiplomaProject/blob/main/documents/TEST_PLAN.md)
+- [Отчет по автоматизированным тестам](https://github.com/AlexandraOwl/netologyDiplomaProject/blob/main/documents/TEST_REPORT.md)
 
 ## Для запуска проекта:
 1. Склонироват репозиторий проекта;
