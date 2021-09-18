@@ -28,13 +28,6 @@ public class PaymentPage {
     private final SelenideElement wrongFormat = $(".input__sub");
     private final SelenideElement requiredField = $(withText("Поле обязательно для заполнения"));
 
-    private final SelenideElement invalidFormatCard = $$("span.input__sub").get(0);
-    private final SelenideElement invalidMonth = $$("span.input__sub").get(1);
-    private final SelenideElement invalidYear = $$("span.input__sub").get(2);
-    private final SelenideElement invalidOwner = $$("span.input__sub").get(3);
-    private final SelenideElement invalidCVV = $$("span.input__sub").get(4);
-
-
     public void fillFormAndSend(DataHelper.CardInfo cardInfo) {
         this.fillForm(cardInfo);
         sendRequestBankButton.shouldBe(Condition.visible, Duration.ofSeconds(10));
@@ -74,22 +67,22 @@ public class PaymentPage {
     }
 
     public void checkInvalidCardNumberT(DataHelper.CardInfo invalidValue) {
-        invalidFormatCard.shouldHave(text("Неверный формат"));
+        cardNumberField.$("input__sub").shouldHave(text("Неверный формат"));
     }
 
     public void checkInvalidMonthT() {
-        invalidMonth.shouldHave(text("Неверный формат"));
+        monthField.$("input__sub").shouldHave(text("Неверный формат"));
     }
 
     public void checkInvalidYearT() {
-        invalidYear.shouldHave(text("Неверный формат"));
+        yearField.$("input__sub").shouldHave(text("Неверный формат"));
     }
 
     public void checkInvalidOwnerT() {
-        invalidOwner.shouldHave(text("Неверный формат"));
+        ownerField.$("input__sub").shouldHave(text("Неверный формат"));
     }
 
     public void checkInvalidCVVT() {
-        invalidCVV.shouldHave(text("Неверный формат"));
+        cvvField.$("input__sub").shouldHave(text("Неверный формат"));
     }
 }
