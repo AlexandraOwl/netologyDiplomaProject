@@ -20,10 +20,10 @@ public class CreditCardPositiveTest extends BaseTest {
     @DisplayName("Тест: валидные данные для Approved кредитной карты")
     void shouldCheckWithAnApprovedCardAndValidData() {
         var payForm = mainPage.payByCreditCard();
-        var approvedInfo = DataHelper.getApprovedCardInfo();
+        var approvedInfo = dataHelper.getApprovedCardInfo();
         payForm.fillFormAndSend(approvedInfo);
         payForm.checkOperationIsApproved();
-        String dataSQLPayment = SQLHelper.getPaymentStatus();
+        String dataSQLPayment = sqlHelper.getPaymentStatus();
         assertEquals("APPROVED", dataSQLPayment);
     }
 
@@ -31,10 +31,10 @@ public class CreditCardPositiveTest extends BaseTest {
     @DisplayName("Тест: проверка покупки в базе данных")
     void shouldBeCheckedWithValidData() {
         var payForm = mainPage.payByCreditCard();
-        var approvedInfo = DataHelper.getApprovedCardInfo();
+        var approvedInfo = dataHelper.getApprovedCardInfo();
         payForm.fillFormAndSend(approvedInfo);
         payForm.checkOperationIsApproved();
-        String dataSQLPayAmount = SQLHelper.getPaymentAmount();
+        String dataSQLPayAmount = sqlHelper.getPaymentAmount();
         assertEquals("45000", dataSQLPayAmount);
     }
 
@@ -42,10 +42,10 @@ public class CreditCardPositiveTest extends BaseTest {
     @DisplayName("Тест: валидные данные для Declined карты")
     void shouldCheckTheDeclinedCardAndTheValidData() {
         var payForm = mainPage.payByCreditCard();
-        var declinedInfo = DataHelper.getDeclinedCardInfo();
+        var declinedInfo = dataHelper.getDeclinedCardInfo();
         payForm.fillFormAndSend(declinedInfo);
         payForm.checkErrorNotification();
-        String dataSQLPayment = SQLHelper.getPaymentStatus();
+        String dataSQLPayment = sqlHelper.getPaymentStatus();
         assertEquals("DECLINED", dataSQLPayment);
     }
 }
