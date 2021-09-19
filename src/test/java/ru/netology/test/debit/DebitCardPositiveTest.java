@@ -2,8 +2,6 @@ package ru.netology.test.debit;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import ru.netology.data.DataHelper;
-import ru.netology.data.SQLHelper;
 import ru.netology.test.BaseTest;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -20,10 +18,10 @@ public class DebitCardPositiveTest extends BaseTest {
     @DisplayName("Тест: проверка дебетовой approved карты с валидными данными")
     void shouldCheckWithAnApprovedCardAndValidData() {
         var payForm = mainPage.payByDebitCard();
-        var approvedInfo = DataHelper.getApprovedCardInfo();
+        var approvedInfo = dataHelper.getApprovedCardInfo();
         payForm.fillFormAndSend(approvedInfo);
         payForm.checkOperationIsApproved();
-        String dataSQLPayment = SQLHelper.getPaymentStatus();
+        String dataSQLPayment = sqlHelper.getPaymentStatus();
         assertEquals("APPROVED", dataSQLPayment);
     }
 
@@ -31,10 +29,10 @@ public class DebitCardPositiveTest extends BaseTest {
     @DisplayName("Тест: проверка покупки в базе данных")
     void shouldBeCheckedWithValidData() {
         var payForm = mainPage.payByDebitCard();
-        var approvedInfo = DataHelper.getApprovedCardInfo();
+        var approvedInfo = dataHelper.getApprovedCardInfo();
         payForm.fillFormAndSend(approvedInfo);
         payForm.checkOperationIsApproved();
-        String dataSQLPayAmount = SQLHelper.getPaymentAmount();
+        String dataSQLPayAmount = sqlHelper.getPaymentAmount();
         assertEquals("45000", dataSQLPayAmount);
     }
 
@@ -42,10 +40,10 @@ public class DebitCardPositiveTest extends BaseTest {
     @DisplayName("Тест: проверка declined дебетовой карты с валидными данными")
     void shouldCheckTheDeclinedCardAndTheValidData() {
         var payForm = mainPage.payByDebitCard();
-        var declinedInfo = DataHelper.getDeclinedCardInfo();
+        var declinedInfo = dataHelper.getDeclinedCardInfo();
         payForm.fillFormAndSend(declinedInfo);
         payForm.checkErrorNotification();
-        String dataSQLPayment = SQLHelper.getPaymentStatus();
+        String dataSQLPayment = sqlHelper.getPaymentStatus();
         assertEquals("DECLINED", dataSQLPayment);
     }
 }
