@@ -1,7 +1,6 @@
 package ru.netology.test.credit;
 
 import org.junit.jupiter.api.*;
-import ru.netology.data.DataHelper;
 import ru.netology.test.BaseTest;
 
 import static com.codeborne.selenide.Selenide.open;
@@ -13,7 +12,7 @@ public class CreditCardNegativeTest extends BaseTest {
     @DisplayName("Тест: невалидный номер карты")
     void shouldCheckTheInvalidCard() {
         var payForm = mainPage.payByCreditCard();
-        var invalidCardNumber = DataHelper.getInvalidCardNumberInfo();
+        var invalidCardNumber = dataHelper.getInvalidCardNumberInfo();
         payForm.fillFormAndSend(invalidCardNumber);
         payForm.checkErrorNotification();
     }
@@ -22,7 +21,7 @@ public class CreditCardNegativeTest extends BaseTest {
     @DisplayName("Тест: невалидный месяц")
     void shouldCheckTheInvalidMonth() {
         var payForm = mainPage.payByCreditCard();
-        var invalidMonth = DataHelper.getInvalidMonthInfo();
+        var invalidMonth = dataHelper.getInvalidMonthInfo();
         payForm.fillForm(invalidMonth);
         payForm.checkInvalidExpirationDate();
     }
@@ -31,7 +30,7 @@ public class CreditCardNegativeTest extends BaseTest {
     @DisplayName("Тест: невалидный месяц (нулевое значение)")
     void shouldCheckTheInvalidMonthZero() {
         var payForm = mainPage.payByCreditCard();
-        var invalidMonth = DataHelper.getInvalidMonthZeroInfo();
+        var invalidMonth = dataHelper.getInvalidMonthZeroInfo();
         payForm.fillForm(invalidMonth);
         payForm.checkInvalidExpirationDate();
     }
@@ -40,7 +39,7 @@ public class CreditCardNegativeTest extends BaseTest {
     @DisplayName("Тест: устаревший год карты")
     void shouldBeCheckedWithAnExpiredExpirationDate() {
         var payForm = mainPage.payByCreditCard();
-        var expiredYear = DataHelper.getExpiredYearInfo();
+        var expiredYear = dataHelper.getExpiredYearInfo();
         payForm.fillForm(expiredYear);
         payForm.checkCardExpired();
     }
@@ -49,7 +48,7 @@ public class CreditCardNegativeTest extends BaseTest {
     @DisplayName("Тест: невалидный год карты")
     void shouldCheckWithTheIncorrectlySpecifiedCardExpirationDate() {
         var payForm = mainPage.payByCreditCard();
-        var invalidYear = DataHelper.getInvalidYearInfo();
+        var invalidYear = dataHelper.getInvalidYearInfo();
         payForm.fillForm(invalidYear);
         payForm.checkInvalidExpirationDate();
     }
@@ -58,7 +57,7 @@ public class CreditCardNegativeTest extends BaseTest {
     @DisplayName("Тест: имя владельца карты на русском языке")
     void shouldCheckTheOwnersDataInCyrillic() {
         var payForm = mainPage.payByCreditCard();
-        var invalidOwner = DataHelper.getInvalidOwnerInfo();
+        var invalidOwner = dataHelper.getInvalidOwnerInfo();
         payForm.fillForm(invalidOwner);
         payForm.checkWrongFormat();
     }
@@ -67,7 +66,7 @@ public class CreditCardNegativeTest extends BaseTest {
     @DisplayName("Тест: отправка пустой формы")
     void shouldSendAnEmptyForm() {
         var payForm = mainPage.payByCreditCard();
-        var emptyFields = DataHelper.getEmptyFields();
+        var emptyFields = dataHelper.getEmptyFields();
         payForm.fillForm(emptyFields);
         payForm.checkWrongFormat();
         payForm.checkRequiredField();
@@ -77,7 +76,7 @@ public class CreditCardNegativeTest extends BaseTest {
     @DisplayName("Тест: ввод невалидных данных для всех полей")
     void shouldBeCheckedWithInvalidDataOfAllFields() {
         var payForm = mainPage.payByCreditCard();
-        var invalidValue = DataHelper.getInvalidCardForm();
+        var invalidValue = dataHelper.getInvalidCardForm();
         payForm.fillForm(invalidValue);
         payForm.checkInvalidMonthT();
         payForm.checkInvalidYearT();
