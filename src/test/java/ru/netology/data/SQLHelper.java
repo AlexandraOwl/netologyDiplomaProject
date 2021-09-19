@@ -24,7 +24,7 @@ public class SQLHelper {
         return connect;
     }
 
-    public static String getPaymentStatus() {
+    public String getPaymentStatus() {
         var runner = new QueryRunner();
         var payStatus = "SELECT status FROM payment_entity";
 
@@ -37,7 +37,7 @@ public class SQLHelper {
         return null;
     }
 
-    public static String getPaymentAmount() {
+    public String getPaymentAmount() {
         var runner = new QueryRunner();
         var payAmount = "SELECT amount FROM payment_entity";
 
@@ -50,7 +50,7 @@ public class SQLHelper {
         return null;
     }
 
-    public static String getCreditStatus() {
+    public String getCreditStatus() {
         var runner = new QueryRunner();
         var cStatus = "SELECT status FROM credit_request_entity";
 
